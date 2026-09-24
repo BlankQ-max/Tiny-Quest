@@ -1,0 +1,838 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:
+        linear-gradient(
+            rgba(10, 20, 25, 0.75),
+            rgba(10, 20, 25, 0.75)
+        ),
+        #17251d;
+
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.game-dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    min-height: 130px;
+    background: #382015;
+
+    border-bottom: 5px solid #b87325;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 15px 25px;
+}
+
+
+/* PLAYER HUD */
+
+.player-hud {
+    width: 390px;
+
+    display: flex;
+    align-items: center;
+
+    background: #4c2819;
+
+    border: 4px solid #b87325;
+    border-radius: 15px;
+
+    padding: 10px;
+}
+
+.player-avatar {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #241713;
+
+    border: 3px solid #e7a738;
+    border-radius: 10px;
+
+    font-size: 48px;
+}
+
+.player-info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.player-name {
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.player-name span {
+    float: right;
+
+    background: #25170f;
+    color: #ffd84d;
+
+    border: 2px solid #d99b2d;
+
+    padding: 3px 8px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+
+/* STATS */
+
+.stat {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 5px 0;
+}
+
+.stat b {
+    font-size: 11px;
+}
+
+.heart {
+    color: #ff4055;
+    font-size: 20px;
+}
+
+.mana {
+    color: #48aaff;
+    font-size: 20px;
+}
+
+.bar {
+    height: 13px;
+    flex: 1;
+
+    background: #1c1513;
+
+    border: 2px solid #16100e;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+}
+
+.hp .fill {
+    width: 100%;
+    background: #ef3f52;
+}
+
+.mp .fill {
+    width: 100%;
+    background: #329ce9;
+}
+
+
+/* COINS */
+
+.coins {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #4c2819;
+
+    border: 4px solid #b87325;
+    border-radius: 12px;
+
+    padding: 12px 20px;
+
+    min-width: 150px;
+}
+
+.coin-icon {
+    color: #ffd84d;
+
+    font-size: 35px;
+
+    text-shadow: 2px 2px #6b4510;
+}
+
+.coins small {
+    display: block;
+
+    color: #dcb477;
+
+    font-size: 11px;
+}
+
+.coins strong {
+    font-size: 24px;
+}
+
+
+/* CONTROLS */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-left: auto;
+}
+
+.keys {
+    display: grid;
+
+    grid-template-columns: repeat(3, 32px);
+    gap: 3px;
+}
+
+.keys kbd:first-child {
+    grid-column: 2;
+}
+
+kbd {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 27px;
+    height: 27px;
+
+    background: #241712;
+
+    border: 2px solid #d49a3d;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.control-text {
+    color: #ddd;
+    font-size: 12px;
+}
+
+.control-text p {
+    margin: 5px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr 230px;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    min-height: 600px;
+}
+
+
+/* =========================
+   PANELS
+========================= */
+
+.panel {
+    background: rgba(55, 31, 21, 0.95);
+
+    border: 4px solid #9c6028;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    box-shadow:
+        inset 0 0 0 2px #422418,
+        0 5px 10px rgba(0, 0, 0, 0.4);
+
+    margin-bottom: 15px;
+}
+
+.panel-title {
+    color: #ffd34f;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    border-bottom: 2px solid #80502b;
+
+    padding-bottom: 8px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   QUEST
+========================= */
+
+.quest-panel h2 {
+    font-size: 16px;
+
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.quest-panel p {
+    color: #d7c7b6;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.quest-progress {
+    height: 8px;
+
+    background: #211613;
+
+    border-radius: 10px;
+
+    margin-top: 12px;
+
+    overflow: hidden;
+}
+
+.quest-progress div {
+    height: 100%;
+
+    width: 25%;
+
+    background: #f2bd3d;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.map-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    background: #4c2a1c;
+
+    border: 3px solid #80502b;
+
+    color: white;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.map-button span {
+    font-size: 25px;
+}
+
+.map-button b {
+    color: #ffd34f;
+}
+
+.map-button:hover,
+.map-button.active {
+    background: #75441e;
+
+    border-color: #f1b83c;
+}
+
+
+/* =========================
+   INVENTORY
+========================= */
+
+.inventory {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 7px;
+}
+
+.item {
+    position: relative;
+
+    height: 55px;
+
+    background: #231612;
+
+    border: 2px solid #8a572b;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.item small {
+    position: absolute;
+
+    right: 3px;
+    bottom: 2px;
+
+    color: white;
+
+    font-size: 11px;
+
+    background: #0008;
+
+    padding: 1px 3px;
+
+    border-radius: 3px;
+}
+
+.item.empty {
+    opacity: 0.4;
+}
+
+
+/* =========================
+   GAME WORLD
+========================= */
+
+.game-area {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.location-name {
+    background: #3e261a;
+
+    border: 3px solid #a86b2d;
+
+    border-radius: 8px;
+
+    padding: 9px;
+
+    text-align: center;
+
+    color: #ffd84d;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.game-world {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    border: 5px solid #77451f;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            #68c5ee 0%,
+            #9cdbef 40%,
+            #75bd51 40%,
+            #4f963b 100%
+        );
+}
+
+
+/* PATH */
+
+.game-world::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20%;
+    bottom: -20px;
+
+    width: 60%;
+    height: 75%;
+
+    background: #c79b62;
+
+    transform: rotate(-7deg);
+
+    border-radius: 50%;
+
+    opacity: 0.9;
+}
+
+
+/* TREES */
+
+.tree {
+    position: absolute;
+
+    font-size: 65px;
+
+    z-index: 2;
+}
+
+.tree1 {
+    left: 25px;
+    bottom: 45px;
+}
+
+.tree2 {
+    right: 20px;
+    top: 30px;
+}
+
+.tree3 {
+    right: 90px;
+    bottom: 30px;
+}
+
+
+/* HOUSES */
+
+.house {
+    position: absolute;
+
+    left: 30%;
+
+    top: 50px;
+
+    font-size: 75px;
+
+    z-index: 3;
+}
+
+.house2 {
+    left: 55%;
+    top: 90px;
+
+    font-size: 60px;
+}
+
+
+/* PLAYER */
+
+.player {
+    position: absolute;
+
+    left: 50%;
+    top: 55%;
+
+    font-size: 48px;
+
+    z-index: 10;
+
+    transition: left 0.08s, top 0.08s;
+
+    filter: drop-shadow(2px 4px 2px #0008);
+}
+
+
+/* NPC */
+
+.npc,
+.shopkeeper {
+    position: absolute;
+
+    z-index: 5;
+
+    font-size: 38px;
+
+    text-align: center;
+}
+
+.npc {
+    left: 22%;
+    top: 53%;
+}
+
+.shopkeeper {
+    right: 20%;
+    top: 50%;
+}
+
+.npc span,
+.shopkeeper span {
+    display: block;
+
+    font-size: 12px;
+
+    color: white;
+
+    background: #3c2418;
+
+    padding: 3px 6px;
+
+    border-radius: 5px;
+}
+
+
+/* SLIME */
+
+.slime {
+    position: absolute;
+
+    right: 8%;
+    bottom: 18%;
+
+    font-size: 42px;
+
+    z-index: 5;
+
+    display: none;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-box {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: #3a2419;
+
+    border: 4px solid #a76b2d;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-top: 8px;
+}
+
+.speech-icon {
+    font-size: 35px;
+}
+
+.message-box strong {
+    color: #ffd34f;
+
+    font-size: 16px;
+}
+
+.message-box p {
+    margin-top: 5px;
+
+    color: #ddd;
+
+    font-size: 13px;
+}
+
+.message-box button {
+    margin-left: auto;
+
+    background: none;
+
+    color: #ffd34f;
+
+    border: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RIGHT MENU
+========================= */
+
+.menu-panel button {
+    width: 100%;
+
+    background: #4a291c;
+
+    color: white;
+
+    border: 2px solid #9b5f2b;
+
+    border-radius: 7px;
+
+    padding: 11px;
+
+    margin: 5px 0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.menu-panel button:hover {
+    background: #75451f;
+
+    border-color: #e7ac39;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.quick-stats p {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #66412a;
+
+    color: #d9c9b9;
+}
+
+.quick-stats strong {
+    color: #ffd34f;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    min-height: 55px;
+
+    background: #281912;
+
+    border-top: 4px solid #865127;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    color: #cdbba7;
+
+    font-size: 12px;
+}
+
+footer kbd {
+    margin: 2px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .main-content {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .right-panel {
+        display: none;
+    }
+
+    .controls {
+        display: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        flex-wrap: wrap;
+    }
+
+    .player-hud {
+        width: 100%;
+    }
+
+    .coins {
+        margin: auto;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel {
+        order: 2;
+    }
+
+    .game-area {
+        order: 1;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+}

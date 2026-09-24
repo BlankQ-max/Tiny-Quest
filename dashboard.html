@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tiny Quest - Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="game-dashboard">
+
+    <!-- TOP BAR -->
+    <header class="top-bar">
+
+        <!-- PLAYER -->
+        <div class="player-hud">
+            <div class="player-avatar">⚔️</div>
+
+            <div class="player-info">
+                <div class="player-name">
+                    Kai
+                    <span>Lv. 1</span>
+                </div>
+
+                <div class="stat">
+                    <span class="heart">♥</span>
+                    <div class="bar hp">
+                        <div class="fill" id="hpFill"></div>
+                    </div>
+                    <b id="hpText">100 / 100</b>
+                </div>
+
+                <div class="stat">
+                    <span class="mana">♦</span>
+                    <div class="bar mp">
+                        <div class="fill" id="mpFill"></div>
+                    </div>
+                    <b id="mpText">50 / 50</b>
+                </div>
+            </div>
+        </div>
+
+        <!-- COINS -->
+        <div class="coins">
+            <span class="coin-icon">●</span>
+            <div>
+                <small>COINS</small>
+                <strong id="coins">125</strong>
+            </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <div class="keys">
+                <kbd>W</kbd>
+                <kbd>A</kbd>
+                <kbd>S</kbd>
+                <kbd>D</kbd>
+            </div>
+
+            <div class="control-text">
+                <p>Move</p>
+                <p><kbd>E</kbd> Interact</p>
+                <p><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Map</p>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN AREA -->
+    <main class="main-content">
+
+        <!-- LEFT SIDE -->
+        <aside class="left-panel">
+
+            <!-- QUEST -->
+            <section class="panel quest-panel">
+                <div class="panel-title">
+                    <span>❗</span>
+                    MAIN QUEST
+                </div>
+
+                <h2>Find the path to the Forest</h2>
+
+                <p>
+                    Talk to Mira in the village and
+                    begin your adventure.
+                </p>
+
+                <div class="quest-progress">
+                    <div id="questProgress"></div>
+                </div>
+            </section>
+
+
+            <!-- MAP -->
+            <section class="panel">
+                <div class="panel-title">
+                    🗺️ MAP
+                </div>
+
+                <div class="map-buttons">
+
+                    <button class="map-button active"
+                            onclick="changeArea('Village')">
+                        <span>🏠</span>
+                        <b>1</b>
+                        Village
+                    </button>
+
+                    <button class="map-button"
+                            onclick="changeArea('Forest')">
+                        <span>🌲</span>
+                        <b>2</b>
+                        Forest
+                    </button>
+
+                    <button class="map-button"
+                            onclick="changeArea('Slime Cave')">
+                        <span>⛰️</span>
+                        <b>3</b>
+                        Slime Cave
+                    </button>
+
+                </div>
+            </section>
+
+
+            <!-- INVENTORY -->
+            <section class="panel">
+
+                <div class="panel-title">
+                    🎒 INVENTORY
+                </div>
+
+                <div class="inventory">
+
+                    <div class="item">
+                        ⚔️
+                        <small>1</small>
+                    </div>
+
+                    <div class="item">
+                        🧪
+                        <small>3</small>
+                    </div>
+
+                    <div class="item">
+                        🔵
+                        <small>5</small>
+                    </div>
+
+                    <div class="item">
+                        🪙
+                        <small id="inventoryCoins">125</small>
+                    </div>
+
+                    <div class="item">
+                        🌿
+                        <small>8</small>
+                    </div>
+
+                    <div class="item">
+                        🍄
+                        <small>6</small>
+                    </div>
+
+                    <div class="item">
+                        📜
+                        <small>1</small>
+                    </div>
+
+                    <div class="item empty"></div>
+
+                </div>
+
+            </section>
+
+        </aside>
+
+
+        <!-- CENTER GAME AREA -->
+        <section class="game-area">
+
+            <div class="location-name" id="locationName">
+                Peaceful Village
+            </div>
+
+            <div class="game-world">
+
+                <!-- DECORATION -->
+                <div class="tree tree1">🌳</div>
+                <div class="tree tree2">🌲</div>
+                <div class="tree tree3">🌳</div>
+
+                <!-- VILLAGE -->
+                <div class="house">🏠</div>
+                <div class="house house2">🏡</div>
+
+                <!-- PLAYER -->
+                <div id="player" class="player">
+                    🧙
+                </div>
+
+                <!-- NPC -->
+                <div class="npc">
+                    👩
+                    <span>Mira</span>
+                </div>
+
+                <div class="shopkeeper">
+                    🧔
+                    <span>Bobo</span>
+                </div>
+
+                <!-- SLIME -->
+                <div class="slime" id="slime">
+                    🟢
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="message-box">
+
+                <div class="speech-icon">
+                    💬
+                </div>
+
+                <div>
+                    <strong>Welcome to Tiny Quest!</strong>
+                    <p id="message">
+                        Use W A S D to move Kai.
+                    </p>
+                </div>
+
+                <button onclick="nextMessage()">▼</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <aside class="right-panel">
+
+            <!-- MENU -->
+            <section class="panel menu-panel">
+
+                <div class="panel-title">
+                    ☰ MENU
+                </div>
+
+                <button onclick="resumeGame()">
+                    ▶ Resume
+                </button>
+
+                <button onclick="openInventory()">
+                    🎒 Inventory
+                </button>
+
+                <button onclick="showSettings()">
+                    ⚙ Settings
+                </button>
+
+                <button onclick="saveGame()">
+                    💾 Save Game
+                </button>
+
+                <button onclick="logout()">
+                    🚪 Logout
+                </button>
+
+            </section>
+
+
+            <!-- QUICK STATS -->
+            <section class="panel quick-stats">
+
+                <div class="panel-title">
+                    📊 STATS
+                </div>
+
+                <p>
+                    Level
+                    <strong>1</strong>
+                </p>
+
+                <p>
+                    EXP
+                    <strong>0 / 100</strong>
+                </p>
+
+                <p>
+                    Attack
+                    <strong>10</strong>
+                </p>
+
+                <p>
+                    Defense
+                    <strong>5</strong>
+                </p>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+
+    <!-- BOTTOM -->
+    <footer>
+
+        <div>
+            <kbd>W</kbd>
+            <kbd>A</kbd>
+            <kbd>S</kbd>
+            <kbd>D</kbd>
+            Move
+        </div>
+
+        <div>
+            <kbd>E</kbd>
+            Interact
+        </div>
+
+        <div>
+            Current Area:
+            <strong id="currentArea">Village</strong>
+        </div>
+
+    </footer>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
