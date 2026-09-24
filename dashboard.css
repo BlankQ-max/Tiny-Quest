@@ -1,144 +1,204 @@
+/* =========================================
+   TINY QUEST: FOREST OF SLIMES
+   DASHBOARD CSS
+========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html,
 body {
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    background:
-        linear-gradient(
-            rgba(10, 20, 25, 0.75),
-            rgba(10, 20, 25, 0.75)
-        ),
-        #17251d;
+    width: 100%;
+    height: 100%;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #1b1512;
     color: white;
-    min-height: 100vh;
+    overflow: hidden;
 }
 
 
-/* =========================
-   DASHBOARD
-========================= */
+/* =========================================
+   MAIN DASHBOARD
+========================================= */
 
 .game-dashboard {
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
+
+    background: #211611;
 }
 
 
-/* =========================
+/* =========================================
    TOP BAR
-========================= */
+========================================= */
 
 .top-bar {
-    min-height: 130px;
-    background: #382015;
-
-    border-bottom: 5px solid #b87325;
+    height: 145px;
+    min-height: 145px;
 
     display: flex;
     align-items: center;
+
     gap: 25px;
 
-    padding: 15px 25px;
+    padding: 12px 20px;
+
+    background: #442316;
+
+    border-bottom: 5px solid #a8662b;
 }
 
 
-/* PLAYER HUD */
+/* =========================================
+   PLAYER HUD
+========================================= */
 
 .player-hud {
-    width: 390px;
+    width: 400px;
+    height: 120px;
 
     display: flex;
     align-items: center;
 
-    background: #4c2819;
+    padding: 8px;
 
-    border: 4px solid #b87325;
+    background: #4b291b;
+
+    border: 4px solid #a8662b;
     border-radius: 15px;
 
-    padding: 10px;
+    overflow: hidden;
 }
 
+
+/* =========================================
+   PLAYER AVATAR
+========================================= */
+
 .player-avatar {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 100px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #241713;
+    background: #211715;
 
-    border: 3px solid #e7a738;
+    border: 3px solid #d99b35;
     border-radius: 10px;
 
-    font-size: 48px;
+    overflow: hidden;
+
+    font-size: 55px;
 }
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================
+   PLAYER INFORMATION
+========================================= */
 
 .player-info {
     flex: 1;
+
+    min-width: 0;
+
     margin-left: 12px;
 }
 
 .player-name {
-    font-size: 23px;
+    font-size: 20px;
+
     font-weight: bold;
 
     margin-bottom: 7px;
+
+    color: white;
 }
 
 .player-name span {
     float: right;
 
-    background: #25170f;
-    color: #ffd84d;
+    padding: 3px 7px;
 
-    border: 2px solid #d99b2d;
+    background: #261711;
 
-    padding: 3px 8px;
+    border: 2px solid #d99b35;
 
     border-radius: 6px;
 
-    font-size: 14px;
+    color: #ffd84d;
+
+    font-size: 13px;
 }
 
 
-/* STATS */
+/* =========================================
+   HP / MP
+========================================= */
 
 .stat {
     display: flex;
     align-items: center;
 
-    gap: 6px;
+    gap: 5px;
 
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 .stat b {
+    width: 65px;
+
     font-size: 11px;
+
+    text-align: right;
 }
 
 .heart {
+    width: 20px;
+
     color: #ff4055;
-    font-size: 20px;
+
+    font-size: 19px;
 }
 
 .mana {
-    color: #48aaff;
-    font-size: 20px;
+    width: 20px;
+
+    color: #42a9ff;
+
+    font-size: 19px;
 }
 
 .bar {
     height: 13px;
+
     flex: 1;
 
-    background: #1c1513;
+    background: #1a1210;
 
-    border: 2px solid #16100e;
+    border: 2px solid #17100e;
 
     border-radius: 8px;
 
@@ -147,71 +207,84 @@ body {
 
 .fill {
     height: 100%;
+
+    transition: width 0.3s ease;
 }
 
 .hp .fill {
     width: 100%;
-    background: #ef3f52;
+
+    background: #f03d51;
 }
 
 .mp .fill {
     width: 100%;
-    background: #329ce9;
+
+    background: #319de5;
 }
 
 
-/* COINS */
+/* =========================================
+   COINS
+========================================= */
 
 .coins {
+    width: 155px;
+    height: 75px;
+
     display: flex;
     align-items: center;
-    gap: 12px;
 
-    background: #4c2819;
+    gap: 10px;
 
-    border: 4px solid #b87325;
+    padding: 10px 15px;
+
+    background: #4b291b;
+
+    border: 4px solid #a8662b;
+
     border-radius: 12px;
-
-    padding: 12px 20px;
-
-    min-width: 150px;
 }
 
 .coin-icon {
-    color: #ffd84d;
+    color: #ffd34f;
 
-    font-size: 35px;
-
-    text-shadow: 2px 2px #6b4510;
+    font-size: 28px;
 }
 
 .coins small {
     display: block;
 
-    color: #dcb477;
+    color: #d8b98d;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .coins strong {
     font-size: 24px;
+
+    color: white;
 }
 
 
-/* CONTROLS */
+/* =========================================
+   CONTROLS
+========================================= */
 
 .controls {
+    margin-left: auto;
+
     display: flex;
     align-items: center;
-    gap: 12px;
 
-    margin-left: auto;
+    gap: 10px;
 }
 
 .keys {
     display: grid;
 
     grid-template-columns: repeat(3, 32px);
+
     gap: 3px;
 }
 
@@ -220,105 +293,122 @@ body {
 }
 
 kbd {
+    width: 30px;
+    height: 27px;
+
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    min-width: 27px;
-    height: 27px;
+    background: #291914;
 
-    background: #241712;
-
-    border: 2px solid #d49a3d;
+    border: 2px solid #d69a3a;
 
     border-radius: 5px;
 
     color: white;
 
+    font-size: 12px;
+
     font-weight: bold;
 }
 
 .control-text {
+    font-size: 11px;
+
     color: #ddd;
-    font-size: 12px;
 }
 
 .control-text p {
-    margin: 5px;
+    margin: 4px 0;
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .main-content {
     flex: 1;
 
+    min-height: 0;
+
     display: grid;
 
-    grid-template-columns: 280px 1fr 230px;
+    grid-template-columns:
+        280px
+        minmax(0, 1fr)
+        230px;
 
-    gap: 15px;
+    gap: 12px;
 
-    padding: 15px;
+    padding: 12px;
 
-    min-height: 600px;
+    overflow: hidden;
+
+    align-items: start;
 }
 
 
-/* =========================
-   PANELS
-========================= */
+/* =========================================
+   SIDE PANELS
+========================================= */
+
+.left-panel,
+.right-panel {
+    min-height: 0;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+}
 
 .panel {
-    background: rgba(55, 31, 21, 0.95);
+    background: #3b2118;
 
-    border: 4px solid #9c6028;
+    border: 4px solid #8e5529;
 
     border-radius: 12px;
 
-    padding: 14px;
+    padding: 12px;
+
+    margin-bottom: 12px;
 
     box-shadow:
-        inset 0 0 0 2px #422418,
-        0 5px 10px rgba(0, 0, 0, 0.4);
-
-    margin-bottom: 15px;
+        inset 0 0 0 2px #49291c,
+        0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
 .panel-title {
     color: #ffd34f;
 
+    font-size: 14px;
+
     font-weight: bold;
 
-    font-size: 15px;
-
-    border-bottom: 2px solid #80502b;
+    border-bottom: 2px solid #75472a;
 
     padding-bottom: 8px;
-
-    margin-bottom: 12px;
-}
-
-
-/* =========================
-   QUEST
-========================= */
-
-.quest-panel h2 {
-    font-size: 16px;
-
-    color: white;
 
     margin-bottom: 10px;
 }
 
-.quest-panel p {
-    color: #d7c7b6;
 
-    font-size: 13px;
+/* =========================================
+   QUEST PANEL
+========================================= */
+
+.quest-panel h2 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.quest-panel p {
+    color: #d6c5b4;
+
+    font-size: 12px;
 
     line-height: 1.5;
 }
@@ -326,60 +416,65 @@ kbd {
 .quest-progress {
     height: 8px;
 
-    background: #211613;
+    margin-top: 10px;
 
-    border-radius: 10px;
+    background: #211411;
 
-    margin-top: 12px;
+    border-radius: 8px;
 
     overflow: hidden;
 }
 
 .quest-progress div {
-    height: 100%;
-
     width: 25%;
+    height: 100%;
 
     background: #f2bd3d;
 }
 
 
-/* =========================
-   MAP
-========================= */
+/* =========================================
+   MAP BUTTONS
+========================================= */
 
 .map-buttons {
     display: flex;
+
     flex-direction: column;
-    gap: 8px;
+
+    gap: 7px;
 }
 
 .map-button {
+    width: 100%;
+
+    min-height: 48px;
+
     display: flex;
 
     align-items: center;
 
     gap: 8px;
 
-    width: 100%;
+    padding: 7px 10px;
 
-    background: #4c2a1c;
+    background: #512d1d;
 
-    border: 3px solid #80502b;
-
-    color: white;
-
-    padding: 9px;
+    border: 3px solid #7d4c29;
 
     border-radius: 8px;
+
+    color: white;
 
     cursor: pointer;
 
     font-weight: bold;
+
+    text-align: left;
 }
 
 .map-button span {
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .map-button b {
@@ -388,41 +483,41 @@ kbd {
 
 .map-button:hover,
 .map-button.active {
-    background: #75441e;
+    background: #75431f;
 
     border-color: #f1b83c;
 }
 
 
-/* =========================
+/* =========================================
    INVENTORY
-========================= */
+========================================= */
 
 .inventory {
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 7px;
+    gap: 6px;
 }
 
 .item {
     position: relative;
 
-    height: 55px;
-
-    background: #231612;
-
-    border: 2px solid #8a572b;
-
-    border-radius: 6px;
+    height: 52px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    font-size: 28px;
+    background: #241613;
+
+    border: 2px solid #81502c;
+
+    border-radius: 6px;
+
+    font-size: 25px;
 }
 
 .item small {
@@ -431,15 +526,13 @@ kbd {
     right: 3px;
     bottom: 2px;
 
-    color: white;
-
-    font-size: 11px;
-
-    background: #0008;
-
     padding: 1px 3px;
 
+    background: #0009;
+
     border-radius: 3px;
+
+    font-size: 10px;
 }
 
 .item.empty {
@@ -447,159 +540,175 @@ kbd {
 }
 
 
-/* =========================
-   GAME WORLD
-========================= */
+/* =========================================
+   MIDDLE GAME AREA
+========================================= */
 
 .game-area {
+    min-width: 0;
+    min-height: 0;
+
     display: flex;
 
     flex-direction: column;
 
-    min-width: 0;
+    align-items: center;
+
+    max-height: 100%;
 }
 
+
+/* =========================================
+   LOCATION TITLE
+========================================= */
+
 .location-name {
-    background: #3e261a;
+    width: 100%;
 
-    border: 3px solid #a86b2d;
+    height: 42px;
+    min-height: 42px;
 
-    border-radius: 8px;
+    display: flex;
 
-    padding: 9px;
+    align-items: center;
+    justify-content: center;
 
-    text-align: center;
+    background: #3d2519;
 
-    color: #ffd84d;
+    border: 3px solid #9d612c;
+
+    border-radius: 9px;
+
+    color: #ffd34f;
+
+    font-size: 16px;
 
     font-weight: bold;
 
     margin-bottom: 8px;
 }
 
+
+/* =========================================
+   WORLD MAP
+   Worldmap.png = 3:2
+========================================= */
+
 .game-world {
     position: relative;
 
-    flex: 1;
+    width: 100%;
 
-    min-height: 430px;
+    /*
+       Keep the exact ratio of the
+       uploaded Worldmap.png
+    */
+    aspect-ratio: 3 / 2;
+
+    flex: 0 0 auto;
 
     overflow: hidden;
 
-    border: 5px solid #77451f;
+    border: 5px solid #75441f;
 
     border-radius: 12px;
 
-    background:
-        linear-gradient(
-            #68c5ee 0%,
-            #9cdbef 40%,
-            #75bd51 40%,
-            #4f963b 100%
-        );
+    background-image: url("Worldmap.png");
+
+    /*
+       IMPORTANT:
+       Shows the complete map.
+    */
+    background-size: contain;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-color: #48a9d8;
+
+    max-width: 100%;
+
+    max-height: calc(100vh - 330px);
 }
 
 
-/* PATH */
+/* =========================================
+   REMOVE OLD MAP OVERLAY
+========================================= */
 
 .game-world::before {
-    content: "";
+    display: none !important;
 
-    position: absolute;
+    content: none !important;
+}
 
-    left: 20%;
-    bottom: -20px;
+.game-world::after {
+    display: none !important;
 
-    width: 60%;
-    height: 75%;
-
-    background: #c79b62;
-
-    transform: rotate(-7deg);
-
-    border-radius: 50%;
-
-    opacity: 0.9;
+    content: none !important;
 }
 
 
-/* TREES */
-
-.tree {
-    position: absolute;
-
-    font-size: 65px;
-
-    z-index: 2;
-}
-
-.tree1 {
-    left: 25px;
-    bottom: 45px;
-}
-
-.tree2 {
-    right: 20px;
-    top: 30px;
-}
-
-.tree3 {
-    right: 90px;
-    bottom: 30px;
-}
-
-
-/* HOUSES */
-
-.house {
-    position: absolute;
-
-    left: 30%;
-
-    top: 50px;
-
-    font-size: 75px;
-
-    z-index: 3;
-}
-
-.house2 {
-    left: 55%;
-    top: 90px;
-
-    font-size: 60px;
-}
-
-
-/* PLAYER */
+/* =========================================
+   KAI PLAYER
+========================================= */
 
 .player {
     position: absolute;
 
-    left: 50%;
-    top: 55%;
+    z-index: 20;
 
-    font-size: 48px;
+    width: 48px;
+    height: 64px;
 
-    z-index: 10;
+    display: flex;
 
-    transition: left 0.08s, top 0.08s;
+    align-items: center;
+    justify-content: center;
 
-    filter: drop-shadow(2px 4px 2px #0008);
+    transform: translate(-50%, -50%);
+
+    font-size: 38px;
+
+    transition:
+        left 0.08s linear,
+        top 0.08s linear;
+
+    filter:
+        drop-shadow(
+            2px 4px 2px rgba(0, 0, 0, 0.45)
+        );
 }
 
 
-/* NPC */
+/*
+   If Kai uses a PNG sprite
+*/
+
+.player img {
+    width: 48px;
+    height: 64px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================
+   NPC
+========================================= */
 
 .npc,
 .shopkeeper {
     position: absolute;
 
-    z-index: 5;
-
-    font-size: 38px;
+    z-index: 10;
 
     text-align: center;
+
+    font-size: 32px;
 }
 
 .npc {
@@ -616,19 +725,21 @@ kbd {
 .shopkeeper span {
     display: block;
 
-    font-size: 12px;
+    padding: 2px 5px;
+
+    background: #392219;
+
+    border-radius: 4px;
 
     color: white;
 
-    background: #3c2418;
-
-    padding: 3px 6px;
-
-    border-radius: 5px;
+    font-size: 10px;
 }
 
 
-/* SLIME */
+/* =========================================
+   SLIME
+========================================= */
 
 .slime {
     position: absolute;
@@ -636,91 +747,94 @@ kbd {
     right: 8%;
     bottom: 18%;
 
-    font-size: 42px;
+    z-index: 10;
 
-    z-index: 5;
+    font-size: 38px;
 
     display: none;
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
+/* =========================================
+   MESSAGE BOX
+========================================= */
 
 .message-box {
-    min-height: 90px;
+    width: 100%;
+
+    min-height: 70px;
+    max-height: 80px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 12px;
 
-    background: #3a2419;
-
-    border: 4px solid #a76b2d;
-
-    border-radius: 10px;
-
-    padding: 12px;
+    padding: 10px;
 
     margin-top: 8px;
+
+    background: #3b2418;
+
+    border: 4px solid #9d612c;
+
+    border-radius: 10px;
 }
 
 .speech-icon {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .message-box strong {
     color: #ffd34f;
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .message-box p {
-    margin-top: 5px;
+    margin-top: 4px;
 
     color: #ddd;
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .message-box button {
     margin-left: auto;
 
+    border: none;
+
     background: none;
 
     color: #ffd34f;
 
-    border: none;
-
-    font-size: 25px;
+    font-size: 20px;
 
     cursor: pointer;
 }
 
 
-/* =========================
+/* =========================================
    RIGHT MENU
-========================= */
+========================================= */
 
 .menu-panel button {
     width: 100%;
 
+    padding: 9px;
+
+    margin: 4px 0;
+
     background: #4a291c;
 
-    color: white;
-
-    border: 2px solid #9b5f2b;
+    border: 2px solid #8e5529;
 
     border-radius: 7px;
 
-    padding: 11px;
+    color: white;
 
-    margin: 5px 0;
-
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: bold;
 
@@ -728,26 +842,28 @@ kbd {
 }
 
 .menu-panel button:hover {
-    background: #75451f;
+    background: #75431f;
 
-    border-color: #e7ac39;
+    border-color: #e5a936;
 }
 
 
-/* =========================
+/* =========================================
    STATS
-========================= */
+========================================= */
 
 .quick-stats p {
     display: flex;
 
     justify-content: space-between;
 
-    padding: 8px 0;
+    padding: 7px 0;
 
-    border-bottom: 1px solid #66412a;
+    border-bottom: 1px solid #654029;
 
-    color: #d9c9b9;
+    color: #d5c3b1;
+
+    font-size: 13px;
 }
 
 .quick-stats strong {
@@ -755,47 +871,51 @@ kbd {
 }
 
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer {
-    min-height: 55px;
-
-    background: #281912;
-
-    border-top: 4px solid #865127;
+    height: 42px;
+    min-height: 42px;
 
     display: flex;
 
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    gap: 30px;
 
-    gap: 35px;
+    background: #291813;
 
-    color: #cdbba7;
+    border-top: 4px solid #805028;
 
-    font-size: 12px;
+    color: #cdbba8;
+
+    font-size: 11px;
 }
 
 footer kbd {
-    margin: 2px;
+    width: 25px;
+    height: 23px;
 }
 
 
-/* =========================
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
     .main-content {
-        grid-template-columns: 220px 1fr;
+        grid-template-columns:
+            240px
+            minmax(0, 1fr)
+            200px;
     }
 
-    .right-panel {
-        display: none;
+    .player-hud {
+        width: 350px;
     }
 
     .controls {
@@ -804,9 +924,27 @@ footer kbd {
 }
 
 
-@media (max-width: 700px) {
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .game-dashboard {
+        height: auto;
+
+        min-height: 100vh;
+    }
 
     .top-bar {
+        height: auto;
+
+        min-height: 120px;
+
         flex-wrap: wrap;
     }
 
@@ -814,25 +952,73 @@ footer kbd {
         width: 100%;
     }
 
-    .coins {
-        margin: auto;
-    }
-
     .main-content {
         grid-template-columns: 1fr;
+
+        overflow: visible;
     }
 
-    .left-panel {
-        order: 2;
+    .left-panel,
+    .right-panel {
+        overflow: visible;
     }
 
     .game-area {
-        order: 1;
+        min-height: 500px;
+    }
+
+    .right-panel {
+        display: block;
     }
 
     footer {
-        flex-wrap: wrap;
-        gap: 10px;
+        height: auto;
+
         padding: 10px;
+
+        flex-wrap: wrap;
+    }
+
+    .game-world {
+        max-height: none;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .top-bar {
+        padding: 8px;
+    }
+
+    .player-hud {
+        height: 105px;
+    }
+
+    .player-avatar {
+        width: 70px;
+        height: 85px;
+
+        font-size: 42px;
+    }
+
+    .coins {
+        display: none;
+    }
+
+    .main-content {
+        padding: 8px;
+    }
+
+    .game-area {
+        min-height: 400px;
+    }
+
+    .game-world {
+        border-width: 3px;
     }
 }

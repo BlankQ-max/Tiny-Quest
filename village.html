@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tiny Quest - Village</title>
+
+    <link rel="stylesheet" href="village.css">
+</head>
+
+<body>
+
+<div class="game">
+
+    <!-- TOP HUD -->
+    <header class="top-bar">
+
+        <div class="player-info">
+
+            <div class="avatar">
+                <img src="kai.png" alt="Kai">
+            </div>
+
+            <div class="player-details">
+                <h2>Kai</h2>
+
+                <div class="level">
+                    Lv. 1
+                </div>
+
+                <div class="stat">
+                    <span class="heart">♥</span>
+                    <div class="bar">
+                        <div class="hp"></div>
+                    </div>
+                    <span>100/100</span>
+                </div>
+
+                <div class="stat">
+                    <span class="mana">◆</span>
+                    <div class="bar">
+                        <div class="mp"></div>
+                    </div>
+                    <span>50/50</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="coins">
+            <span>🪙</span>
+            <div>
+                <small>COINS</small>
+                <strong id="coinCount">125</strong>
+            </div>
+        </div>
+
+
+        <div class="controls">
+
+            <div class="keys">
+                <kbd>W</kbd>
+                <kbd>A</kbd>
+                <kbd>S</kbd>
+                <kbd>D</kbd>
+            </div>
+
+            <div>
+                <small>Move</small>
+                <br>
+                <kbd>E</kbd> Interact
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN GAME -->
+    <main class="game-layout">
+
+        <!-- LEFT PANEL -->
+        <aside class="left-panel">
+
+            <div class="panel">
+
+                <h3>⚔ MAIN QUEST</h3>
+
+                <h2>Find the path to the Forest</h2>
+
+                <p>
+                    Explore the village and find
+                    the path leading to the forest.
+                </p>
+
+                <div class="quest-bar">
+                    <div></div>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>🗺 MAP</h3>
+
+                <button class="map-button active">
+                    🏠 1 Village
+                </button>
+
+                <button class="map-button" onclick="goForest()">
+                    🌲 2 Forest
+                </button>
+
+                <button class="map-button">
+                    ⛰ 3 Slime Cave
+                </button>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>🎒 INVENTORY</h3>
+
+                <div class="inventory">
+
+                    <div class="item">
+                        🧪
+                        <small>3</small>
+                    </div>
+
+                    <div class="item">
+                        🍖
+                        <small>2</small>
+                    </div>
+
+                    <div class="item">
+                        ⚔️
+                    </div>
+
+                    <div class="item empty">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CENTER -->
+        <section class="center">
+
+            <div class="location">
+                🏠 Peaceful Village
+            </div>
+
+
+            <!-- GAME WORLD -->
+            <div id="world">
+
+                <!-- MAP -->
+                <div class="map"></div>
+
+
+                <!-- KAI -->
+                <div id="kai">
+
+                    <img src="kai.png" alt="Kai">
+
+                </div>
+
+
+                <!-- INTERACTION AREA -->
+                <div id="interaction"></div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="message">
+
+                <div class="speech">
+                    💬
+                </div>
+
+                <div>
+
+                    <strong id="messageTitle">
+                        Welcome to the Village!
+                    </strong>
+
+                    <p id="messageText">
+                        Use W A S D to move Kai.
+                        Press E near an object to interact.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel">
+
+            <div class="panel">
+
+                <h3>☰ MENU</h3>
+
+                <button onclick="resumeGame()">
+                    ▶ Resume
+                </button>
+
+                <button onclick="showInventory()">
+                    🎒 Inventory
+                </button>
+
+                <button onclick="showSettings()">
+                    ⚙ Settings
+                </button>
+
+                <button onclick="saveGame()">
+                    💾 Save Game
+                </button>
+
+                <button onclick="logout()">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+
+            <div class="panel stats">
+
+                <h3>📊 STATS</h3>
+
+                <p>
+                    <span>Level</span>
+                    <b>1</b>
+                </p>
+
+                <p>
+                    <span>EXP</span>
+                    <b>0 / 100</b>
+                </p>
+
+                <p>
+                    <span>Attack</span>
+                    <b>10</b>
+                </p>
+
+                <p>
+                    <span>Defense</span>
+                    <b>5</b>
+                </p>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <span>
+            <kbd>W</kbd>
+            <kbd>A</kbd>
+            <kbd>S</kbd>
+            <kbd>D</kbd>
+            Move
+        </span>
+
+        <span>
+            <kbd>E</kbd>
+            Interact
+        </span>
+
+        <span>
+            Current Area: <b>Village</b>
+        </span>
+
+    </footer>
+
+</div>
+
+<script src="village.js"></script>
+
+</body>
+</html>

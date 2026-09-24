@@ -1,0 +1,756 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #211510;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* =====================================
+   MAIN GAME
+===================================== */
+
+.game {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #241611;
+}
+
+
+/* =====================================
+   TOP BAR
+===================================== */
+
+.top-bar {
+    height: 140px;
+
+    min-height: 140px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 10px 20px;
+
+    background: #482719;
+
+    border-bottom: 5px solid #9b5b2b;
+}
+
+
+/* =====================================
+   PLAYER
+===================================== */
+
+.player-info {
+    width: 400px;
+
+    height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 8px;
+
+    background: #512d1d;
+
+    border: 4px solid #a8682d;
+
+    border-radius: 15px;
+}
+
+.avatar {
+    width: 90px;
+    height: 95px;
+
+    overflow: hidden;
+
+    border: 3px solid #d69a39;
+
+    border-radius: 10px;
+
+    background: #211611;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+}
+
+.player-details {
+    flex: 1;
+
+    padding-left: 12px;
+}
+
+.player-details h2 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.level {
+    float: right;
+
+    padding: 4px 7px;
+
+    border: 2px solid #d89d3a;
+
+    border-radius: 5px;
+
+    color: #ffd34f;
+
+    font-size: 12px;
+}
+
+.stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+}
+
+.heart {
+    color: #ff3852;
+
+    font-size: 18px;
+}
+
+.mana {
+    color: #32a9e8;
+
+    font-size: 16px;
+}
+
+.bar {
+    flex: 1;
+
+    height: 12px;
+
+    background: #17100d;
+
+    border: 2px solid #120d0a;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.hp {
+    width: 100%;
+    height: 100%;
+
+    background: #f43651;
+}
+
+.mp {
+    width: 100%;
+    height: 100%;
+
+    background: #169fd8;
+}
+
+
+/* =====================================
+   COINS
+===================================== */
+
+.coins {
+    width: 155px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    background: #512d1d;
+
+    border: 4px solid #a8682d;
+
+    border-radius: 12px;
+}
+
+.coins > span {
+    font-size: 28px;
+}
+
+.coins small {
+    color: #d4bca3;
+
+    font-size: 10px;
+}
+
+.coins strong {
+    font-size: 23px;
+}
+
+
+/* =====================================
+   CONTROLS
+===================================== */
+
+.controls {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 11px;
+}
+
+.keys {
+    display: grid;
+
+    grid-template-columns: repeat(2, 32px);
+
+    gap: 3px;
+}
+
+kbd {
+    min-width: 28px;
+    height: 27px;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 3px 6px;
+
+    background: #291813;
+
+    border: 2px solid #d59a38;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =====================================
+   MAIN LAYOUT
+===================================== */
+
+.game-layout {
+    flex: 1;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        280px
+        minmax(0, 1fr)
+        230px;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================
+   SIDE PANELS
+===================================== */
+
+.left-panel,
+.right-panel {
+    min-height: 0;
+
+    overflow-y: auto;
+}
+
+.panel {
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    background: #3b2118;
+
+    border: 4px solid #8e5529;
+
+    border-radius: 12px;
+}
+
+.panel h3 {
+    padding-bottom: 8px;
+
+    margin-bottom: 12px;
+
+    border-bottom: 2px solid #70452b;
+
+    color: #ffd34f;
+
+    font-size: 14px;
+}
+
+.panel h2 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.panel p {
+    color: #d8c5b4;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   QUEST BAR
+===================================== */
+
+.quest-bar {
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 10px;
+
+    background: #21130e;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.quest-bar div {
+    width: 25%;
+
+    height: 100%;
+
+    background: #f2bd3d;
+}
+
+
+/* =====================================
+   MAP BUTTON
+===================================== */
+
+.map-button {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-bottom: 7px;
+
+    text-align: left;
+
+    background: #512d1d;
+
+    border: 3px solid #754629;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.map-button:hover,
+.map-button.active {
+    background: #75431f;
+
+    border-color: #f0b83d;
+}
+
+
+/* =====================================
+   INVENTORY
+===================================== */
+
+.inventory {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 5px;
+}
+
+.item {
+    height: 50px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #241511;
+
+    border: 2px solid #81502c;
+
+    border-radius: 6px;
+
+    font-size: 24px;
+}
+
+.item small {
+    position: absolute;
+
+    right: 3px;
+    bottom: 2px;
+
+    font-size: 10px;
+}
+
+
+/* =====================================
+   CENTER
+===================================== */
+
+.center {
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =====================================
+   LOCATION
+===================================== */
+
+.location {
+    width: 100%;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+
+    background: #3d2519;
+
+    border: 3px solid #9d612c;
+
+    border-radius: 9px;
+
+    color: #ffd34f;
+
+    font-weight: bold;
+}
+
+
+/* =====================================
+   WORLD
+===================================== */
+
+#world {
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Map image is 3:2
+    */
+    aspect-ratio: 3 / 2;
+
+    max-height: calc(100vh - 300px);
+
+    overflow: hidden;
+
+    background: #48a9d8;
+
+    border: 5px solid #75441f;
+
+    border-radius: 12px;
+}
+
+
+/* =====================================
+   VILLAGE MAP
+===================================== */
+
+.map {
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("VillageMap.png");
+
+    background-size: contain;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-color: #48a9d8;
+}
+
+
+/* =====================================
+   KAI
+===================================== */
+
+#kai {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 48px;
+    height: 64px;
+
+    left: 50%;
+    top: 62%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    transition:
+        left 0.08s linear,
+        top 0.08s linear;
+}
+
+#kai img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(
+            2px 4px 2px rgba(0,0,0,0.5)
+        );
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.message {
+    width: 100%;
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 9px;
+
+    margin-top: 8px;
+
+    background: #3b2418;
+
+    border: 4px solid #9d612c;
+
+    border-radius: 10px;
+}
+
+.speech {
+    font-size: 28px;
+}
+
+.message strong {
+    color: #ffd34f;
+
+    font-size: 14px;
+}
+
+.message p {
+    margin-top: 3px;
+
+    color: #ddd;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   RIGHT MENU
+===================================== */
+
+.right-panel button {
+    width: 100%;
+
+    padding: 10px;
+
+    margin: 4px 0;
+
+    background: #4a291c;
+
+    border: 2px solid #8e5529;
+
+    border-radius: 7px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.right-panel button:hover {
+    background: #75431f;
+
+    border-color: #e5a936;
+}
+
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats p {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #654029;
+}
+
+.stats b {
+    color: #ffd34f;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    height: 42px;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    background: #291813;
+
+    border-top: 4px solid #805028;
+
+    color: #cdbba8;
+
+    font-size: 11px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .game-layout {
+        grid-template-columns:
+            220px
+            minmax(0, 1fr)
+            190px;
+    }
+
+    .player-info {
+        width: 330px;
+    }
+
+    .controls {
+        display: none;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .game {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .top-bar {
+        height: auto;
+
+        flex-wrap: wrap;
+    }
+
+    .player-info {
+        width: 100%;
+    }
+
+    .game-layout {
+        grid-template-columns: 1fr;
+
+        overflow: visible;
+    }
+
+    #world {
+        max-height: none;
+    }
+
+    .left-panel,
+    .right-panel {
+        overflow: visible;
+    }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tiny Quest - Village Shop</title>
+
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+<div class="shop-page">
+
+    <!-- SHOP HEADER -->
+    <header class="shop-header">
+
+        <button class="back-btn" onclick="goBack()">
+            ← Village
+        </button>
+
+        <div class="shop-title">
+            <h1>🏪 Village Shop</h1>
+            <p>Supplies for your adventure!</p>
+        </div>
+
+        <div class="gold-display">
+            🪙
+            <span id="gold">125</span>
+        </div>
+
+    </header>
+
+
+    <!-- SHOP -->
+    <main class="shop-container">
+
+        <div class="shopkeeper">
+            <div class="shopkeeper-face">
+                🧑‍🌾
+            </div>
+
+            <div>
+                <h2>Welcome, Adventurer!</h2>
+                <p>
+                    Take some supplies before heading into
+                    the Green Forest.
+                </p>
+            </div>
+        </div>
+
+
+        <h2 class="section-title">
+            🛒 Items
+        </h2>
+
+
+        <div class="items">
+
+
+            <!-- HEALTH POTION -->
+            <div class="item-card">
+
+                <div class="item-icon health">
+                    🧪
+                </div>
+
+                <div class="item-info">
+
+                    <h3>Health Potion</h3>
+
+                    <p>
+                        Restores 30 HP.
+                    </p>
+
+                    <div class="price">
+                        🪙 20
+                    </div>
+
+                </div>
+
+                <div class="item-buy">
+
+                    <div class="quantity">
+                        Owned:
+                        <span id="healthQuantity">
+                            0
+                        </span>
+                    </div>
+
+                    <button
+                        onclick="buyItem('healthPotion')">
+
+                        Buy
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MANA POTION -->
+            <div class="item-card">
+
+                <div class="item-icon mana">
+                    💧
+                </div>
+
+                <div class="item-info">
+
+                    <h3>Mana Potion</h3>
+
+                    <p>
+                        Restores 20 Mana.
+                    </p>
+
+                    <div class="price">
+                        🪙 15
+                    </div>
+
+                </div>
+
+                <div class="item-buy">
+
+                    <div class="quantity">
+                        Owned:
+                        <span id="manaQuantity">
+                            0
+                        </span>
+                    </div>
+
+                    <button
+                        onclick="buyItem('manaPotion')">
+
+                        Buy
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUPER POTION -->
+            <div class="item-card">
+
+                <div class="item-icon super">
+                    ✨
+                </div>
+
+                <div class="item-info">
+
+                    <h3>Super Potion</h3>
+
+                    <p>
+                        Restores 60 HP.
+                    </p>
+
+                    <div class="price">
+                        🪙 50
+                    </div>
+
+                </div>
+
+                <div class="item-buy">
+
+                    <div class="quantity">
+                        Owned:
+                        <span id="superQuantity">
+                            0
+                        </span>
+                    </div>
+
+                    <button
+                        onclick="buyItem('superPotion')">
+
+                        Buy
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+        <div
+            id="shopMessage"
+            class="shop-message">
+
+            Welcome to the shop!
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script type="module" src="shop.js"></script>
+
+</body>
+</html>

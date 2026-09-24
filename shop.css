@@ -1,0 +1,539 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(35, 18, 12, 0.65),
+            rgba(35, 18, 12, 0.65)
+        ),
+        url("VillageMap.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.shop-page {
+
+    min-height: 100vh;
+
+    background:
+        rgba(35, 18, 12, 0.65);
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.shop-header {
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 35px;
+
+    background:
+        #3a2016;
+
+    border-bottom: 5px solid #a7652c;
+
+}
+
+
+.shop-title {
+
+    text-align: center;
+
+}
+
+
+.shop-title h1 {
+
+    color: #ffd34f;
+
+    font-size: 30px;
+
+}
+
+
+.shop-title p {
+
+    color: #d7c1ad;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn {
+
+    padding: 12px 20px;
+
+    background: #75401f;
+
+    border: 3px solid #c47a31;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.back-btn:hover {
+
+    background: #9a5727;
+
+}
+
+
+/* =========================================
+   GOLD
+========================================= */
+
+.gold-display {
+
+    min-width: 130px;
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #25140e;
+
+    border: 3px solid #d28a32;
+
+    border-radius: 10px;
+
+    color: #ffd34f;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   SHOP CONTAINER
+========================================= */
+
+.shop-container {
+
+    width: 900px;
+
+    max-width: 92%;
+
+    margin: 35px auto;
+
+    padding: 25px;
+
+    background:
+        rgba(55, 29, 20, 0.96);
+
+    border: 4px solid #9c5b2a;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* =========================================
+   SHOPKEEPER
+========================================= */
+
+.shopkeeper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    background: #48271a;
+
+    border: 2px solid #8f542a;
+
+    border-radius: 12px;
+
+}
+
+
+.shopkeeper-face {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1c39a;
+
+    border: 3px solid #b97538;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+}
+
+
+.shopkeeper h2 {
+
+    color: #ffd34f;
+
+    margin-bottom: 5px;
+
+}
+
+
+.shopkeeper p {
+
+    color: #d9c5b5;
+
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section-title {
+
+    color: #ffd34f;
+
+    margin-bottom: 15px;
+
+    border-bottom: 2px solid #744329;
+
+    padding-bottom: 10px;
+
+}
+
+
+/* =========================================
+   ITEMS
+========================================= */
+
+.items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/* =========================================
+   ITEM CARD
+========================================= */
+
+.item-card {
+
+    min-height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    background: #2d1811;
+
+    border: 3px solid #704127;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+
+}
+
+
+.item-card:hover {
+
+    border-color: #d28a32;
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================
+   ITEM ICON
+========================================= */
+
+.item-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 40px;
+
+    background: #1b100b;
+
+    border: 2px solid #81502d;
+
+}
+
+
+.health {
+
+    background: #422019;
+
+}
+
+
+.mana {
+
+    background: #142f42;
+
+}
+
+
+.super {
+
+    background: #3d2a18;
+
+}
+
+
+/* =========================================
+   ITEM INFO
+========================================= */
+
+.item-info {
+
+    flex: 1;
+
+}
+
+
+.item-info h3 {
+
+    font-size: 20px;
+
+    color: white;
+
+    margin-bottom: 5px;
+
+}
+
+
+.item-info p {
+
+    color: #cdbbad;
+
+    margin-bottom: 8px;
+
+}
+
+
+.price {
+
+    color: #ffd34f;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   BUY
+========================================= */
+
+.item-buy {
+
+    min-width: 120px;
+
+    text-align: center;
+
+}
+
+
+.quantity {
+
+    color: #cdbbad;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+}
+
+
+.quantity span {
+
+    color: #ffd34f;
+
+    font-weight: bold;
+
+}
+
+
+.item-buy button {
+
+    width: 100px;
+
+    padding: 10px;
+
+    background: #3e9b42;
+
+    border: 2px solid #68c66b;
+
+    border-radius: 7px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.item-buy button:hover {
+
+    background: #51b655;
+
+}
+
+
+.item-buy button:disabled {
+
+    background: #555;
+
+    border-color: #666;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.shop-message {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    background: #26140e;
+
+    border: 2px solid #744329;
+
+    border-radius: 8px;
+
+    color: #ffd34f;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .shop-header {
+
+        height: auto;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+    .shop-title {
+
+        order: -1;
+
+        width: 100%;
+
+    }
+
+    .item-card {
+
+        flex-wrap: wrap;
+
+    }
+
+    .item-info {
+
+        min-width: 180px;
+
+    }
+
+}

@@ -1,0 +1,754 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background: #17100d;
+
+    color: white;
+}
+
+
+/* =========================================
+   GAME
+========================================= */
+
+#game {
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #17100d;
+}
+
+
+/* =========================================
+   HUD
+========================================= */
+
+.hud {
+
+    height: 125px;
+
+    min-height: 125px;
+
+    position: relative;
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 25px;
+
+    background:
+        linear-gradient(
+            #492719,
+            #351c14
+        );
+
+    border-bottom: 5px solid #9b5b2b;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   PLAYER HUD
+========================================= */
+
+.player-hud {
+
+    width: 410px;
+
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 7px 12px;
+
+    background:
+        rgba(58, 31, 21, 0.95);
+
+    border: 4px solid #a9682d;
+
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(255, 200, 100, 0.1);
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.avatar {
+
+    width: 82px;
+
+    height: 90px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #111820;
+
+    border: 3px solid #d79535;
+
+    border-radius: 10px;
+}
+
+
+/*
+   Uses the first IDLE frame
+   from Kai sprite.png
+*/
+
+.kai-avatar {
+
+    width: 75px;
+
+    height: 90px;
+
+    background-image:
+        url("Kai sprite.png");
+
+    background-repeat: no-repeat;
+
+    background-size: 1224px 1224px;
+
+    background-position:
+        -340px -42px;
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   PLAYER INFORMATION
+========================================= */
+
+.player-info {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.name-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+
+.player-name {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: white;
+}
+
+
+.level {
+
+    padding: 4px 8px;
+
+    border: 2px solid #d99b38;
+
+    border-radius: 6px;
+
+    color: #ffd34f;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stat-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 6px 0;
+
+    font-size: 11px;
+}
+
+
+.stat-icon {
+
+    width: 18px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+.hp-icon {
+    color: #ff3653;
+}
+
+
+.mana-icon {
+    color: #25a9e5;
+}
+
+
+.stat-bar {
+
+    flex: 1;
+
+    height: 13px;
+
+    overflow: hidden;
+
+    background: #160d0a;
+
+    border: 2px solid #21120c;
+
+    border-radius: 8px;
+}
+
+
+.hp-fill {
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            #ff4058,
+            #ed2442
+        );
+
+    border-radius: 5px;
+}
+
+
+.mana-fill {
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            #24b9ee,
+            #168cc5
+        );
+
+    border-radius: 5px;
+}
+
+
+#hpText,
+#manaText {
+
+    width: 60px;
+
+    text-align: right;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   GOLD
+========================================= */
+
+.gold-box {
+
+    min-width: 160px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 10px 15px;
+
+    background:
+        rgba(65, 34, 23, 0.95);
+
+    border: 4px solid #a9682d;
+
+    border-radius: 12px;
+}
+
+
+.coin {
+
+    font-size: 30px;
+}
+
+
+.gold-box small {
+
+    display: block;
+
+    color: #d0b9a1;
+
+    font-size: 10px;
+}
+
+
+.gold-box strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #d9c6b4;
+
+    font-size: 12px;
+}
+
+
+.wasd {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+
+kbd {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 29px;
+
+    height: 29px;
+
+    padding: 3px 7px;
+
+    background: #24130d;
+
+    border: 2px solid #d49435;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+/* =========================================
+   GAME WORLD / CAMERA
+========================================= */
+
+#world {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    background: #47aee0;
+}
+
+
+/* =========================================
+   BIG VILLAGE MAP
+========================================= */
+
+.village-map {
+    position: absolute;
+
+    /*
+       Make the map larger than the screen.
+       This allows the camera to move around it.
+    */
+    width: 1600px;
+    height: 1067px;
+
+    left: 0;
+    top: 0;
+
+    background-image: url("Village.png");
+
+    background-repeat: no-repeat;
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   KAI
+========================================= */
+
+#kai {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 75px;
+    height: 100px;
+
+    /*
+       Position is controlled by JavaScript
+    */
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+
+    will-change: transform;
+}
+
+
+.kai-sprite {
+    width: 75px;
+    height: 100px;
+
+    background-image: url("Kai sprite.png");
+
+    background-repeat: no-repeat;
+
+    background-size: 1224px 1224px;
+
+    background-position: -340px -38px;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(
+            3px 5px 2px
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+
+/* =========================================
+   FOREST SIGN
+========================================= */
+
+.forest-sign {
+    position: absolute;
+
+    z-index: 15;
+
+    left: 1250px;
+    top: 150px;
+
+    padding: 8px 16px;
+
+    background: #75401f;
+
+    border: 3px solid #d18a35;
+
+    border-radius: 6px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 8px
+        rgba(0, 0, 0, 0.4);
+}
+
+.forest-sign:hover {
+
+    background: #9b5727;
+
+    border-color: #ffd34f;
+}
+
+
+
+/* =========================================
+   INTERACTION
+========================================= */
+
+.interaction {
+    position: absolute;
+
+    z-index: 30;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    padding: 8px 15px;
+
+    background: rgba(35, 20, 14, 0.9);
+
+    border: 2px solid #bd792e;
+
+    border-radius: 8px;
+
+    color: #ffd34f;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    opacity: 0;
+
+    transition: opacity 0.2s;
+}
+
+.interaction.show {
+    opacity: 1;
+}
+
+/* =========================================
+   DIALOGUE
+========================================= */
+
+.dialogue {
+
+    min-height: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 25px;
+
+    background:
+        #392117;
+
+    border-top: 4px solid #8d5428;
+
+    border-bottom: 4px solid #8d5428;
+}
+
+
+.dialogue-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+
+.dialogue strong {
+
+    color: #ffd34f;
+
+    font-size: 14px;
+}
+
+
+.dialogue p {
+
+    margin-top: 4px;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   WALKING ANIMATION
+========================================= */
+
+#kai.walking .kai-sprite {
+    animation:
+        walkBob 0.18s infinite alternate;
+}
+
+@keyframes walkBob {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .player-hud {
+
+        width: 350px;
+    }
+
+    .gold-box {
+
+        min-width: 130px;
+    }
+
+    .controls {
+
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hud {
+
+        height: 100px;
+
+        min-height: 100px;
+
+        padding: 6px 10px;
+    }
+
+    .player-hud {
+
+        width: 280px;
+
+        height: 85px;
+    }
+
+    .avatar {
+
+        width: 65px;
+
+        height: 70px;
+    }
+
+    .player-name {
+
+        font-size: 17px;
+    }
+
+    .gold-box {
+
+        min-width: 100px;
+
+        height: 65px;
+    }
+
+    .gold-box strong {
+
+        font-size: 18px;
+    }
+
+    .dialogue {
+
+        height: 60px;
+
+        min-height: 60px;
+    }
+
+    .forest-sign {
+
+        font-size: 11px;
+    }
+}
